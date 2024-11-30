@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9; 
+ 
 }
 .navbar {
   padding: 10px 15px;
@@ -64,6 +64,7 @@ body {
   font-size: 48px;
   margin-bottom: 20px;
   color: #333; 
+  margin-right: 20px;
 }
 
 .about_part1 p {
@@ -76,60 +77,131 @@ body {
   max-width: 100%;
   height: auto;
 }
+#type_side{
+  display: flex;
+ 
+}
+#skill{
+  font-size: 48px;
+  font-weight: bolder;
+  font-style: italic;
+  color: aqua;
+}
 
 .border {
  border: 2px solid black;
  width: 100%;
 }
-.contents {
-  display: flex;
-  justify-content: space-between;
+#language {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.container {
-  width: 50%;
-  height: auto; 
-  margin: auto;
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
   padding: 20px;
-  box-sizing: border-box; 
-  box-shadow: 0px 0px 4px darkgray ;
-  margin-left: 20px;
-  border-radius: 20px;
-
-}
-
-.box {
-  width: 100%;
-  height: 200px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;  
-}
-
-.box img {
-  width: 50%;
-  height: 50%;
-  object-fit:contain;
-  border-radius: 10px; 
 }
 #language h1{
-  font-size: 30px;
+  font-size:50px;
+}
+.logo {
+  display: inline-block;
+  margin: 20px;
   text-align: center;
-  margin-bottom: 50px;
+}
+
+.logo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 10);
   padding: 20px;
 }
-#language{
-  background-color: #fff;
+
+.logo button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color:black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.40s ease-in-out;
 }
+
+.logo button:hover {
+ transform: scale(1.1);
+ color: red;
+ font-weight: bold;
+
+}
+
+/* Popup styling */
+.popup-main {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.popup-main.active {
+  display: block; /* Show popup when active */
+}
+
+.popup-main h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-align: justify;
+}
+
+.certifecate img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.popup p {
+  margin-left: 15px;
+  font-size: 25px;
+  color: #555;
+  font-weight: bold;
+}
+
+.popup-main .close-button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #ff5c5c;
+ transform: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+}
+.popup-main .close-button:hover {
+  background-color: #e64545;
+  color: white;
+  transform: none;
+}
+
 #project {
   padding: 50px;
- 
+  background-color: #f9f9f9;
 }
 
 #project h1 {
@@ -141,7 +213,7 @@ body {
 
 .main-content {
   display: grid;
-  grid-template-columns: repeat(4, 2fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr)); /* Flexible columns */
   gap: 20px;
   text-align: center;
 }
@@ -151,12 +223,15 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animation */
 }
 
 .content h2 {
+  color: aqua;
   font-size: 1.5em;
   margin-bottom: 15px;
-  color: black;
 }
 
 .content p {
@@ -166,18 +241,27 @@ body {
 
 .button {
   display: inline-block;
-  background-color:transparent;
+  background-color: transparent;
   color: black;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
   background-color: #555555;
+  color: white; /* Add contrast for better visibility */
 }
-#experience{
+
+.content.appear {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Back to original position */
+}
+
+
+/*#experience{
   display: flex;
   flex-direction: row-reverse;
   margin-bottom: 20px;
@@ -305,4 +389,12 @@ cursor: pointer;
 .contact button:hover {
   background-color: darkgray;
 }
-
+#type_side{
+  display: flex;
+  
+}
+#skill{
+  font-size: 50px;
+  padding-left: 20px;
+  color: aqua;
+} */
