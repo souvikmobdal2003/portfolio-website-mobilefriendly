@@ -42,5 +42,29 @@ document.querySelectorAll('.open-button').forEach(button => {
       }, index * 300); 
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all section titles (h1 inside education and internship)
+    const sectionTitles = document.querySelectorAll(".education > h1, .internship > h1");
+  
+    // Add event listener to each title
+    sectionTitles.forEach((title) => {
+      title.addEventListener("click", () => {
+        // Get the parent container of the clicked title
+        const parentSection = title.parentElement;
+  
+        // Toggle the active class on the parent section
+        parentSection.classList.toggle("active");
+  
+        // Collapse other sections
+        document.querySelectorAll(".education, .internship").forEach((section) => {
+          if (section !== parentSection) {
+            section.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+  
   
   

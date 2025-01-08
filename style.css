@@ -260,40 +260,80 @@ body {
   transform: translateY(0); /* Back to original position */
 }
 
-
-/*#experience{
+/* Center the entire Experience section */
+#experience {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px; 
+  width: 100%; /* Adjust width as needed */
+}
+
+/* Main heading styling */
+#experience > h1 {
+    font-size: 2.5em;
+  color: black;
   margin-bottom: 20px;
-  background-color:#fff;
-} 
-.education{
-  width: 48%;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+/* Flex container for Education and Internship */
+.content_experience {
+  display: flex;
+  justify-content: space-between; 
+  gap: 50px; /* Gap between the two sections */
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.education, .internship {
+  width: 45%; /* Half-width for side-by-side display */
+  padding: 50px;
+  border: 2px solid #ecf0f1;
+  border-radius: 30px;
+  background-color: #f8f9fa;
+  overflow: hidden; /* Prevent content overflow */
+  max-height: 0; /* Initially collapsed */
+  transition: max-height 2s ease-in-out, background-color 0.3s;
+}
+
+.education.active, .internship.active {
+  max-height: 500px; /* Arbitrary large value to expand */
+  background-color: #e8f5e9; /* Highlight active section */
+}
+
+/* Section headings */
+.education > h1, .internship > h1 {
+  cursor: pointer;
+  font-size: 25px;
+  color: #16a085;
+  text-align: center;
+  margin-bottom: 20px;
   
 }
-.education h1{
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-.education p,h2{
-  line-height: 1.6;
+
+/* Subheadings */
+.education h2, .internship h2 {
+  font-size: 20px;
+  color: #34495e;
+  margin-top: 15px;
 }
 
-.internship{
-  width: 48%;
+/* Paragraph text */
+.education p, .internship p {
+  font-size: 16px;
+  color: #7f8c8d;
+  line-height: 1.8;
 }
-.internship h1{
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-.internship p,h2{
-  line-height: 1.6;
-}
-#socialmedia{
+
+
+
+ /* #socialmedia{
   text-align: center;
 margin: 15px;
 }
@@ -397,4 +437,4 @@ cursor: pointer;
   font-size: 50px;
   padding-left: 20px;
   color: aqua;
-} */
+} */ */ */
