@@ -46,7 +46,7 @@ body {
 
 .navbar nav ul img {
   height: 70px;
-  margin-left: auto;
+  margin-left: 600px;
 }
 #about{
   display: flex;
@@ -332,31 +332,61 @@ body {
 }
 
 
-
- /* #socialmedia{
+#socialmedia {
   text-align: center;
-margin: 15px;
+  margin: 15px auto;
+  padding: 20px;
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth section hover effect */
 }
+
+
+
 #socialmedia table {
   width: 100%;
+  border-collapse: collapse; /* Remove gaps between cells */
   text-align: center;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
 }
 
-#socialmedia th, #socialmedia td {
+#socialmedia table:hover {
+  transform: scale(1.01); /* Slightly zoom in the table */
+}
+
+#socialmedia th, 
+#socialmedia td {
   padding: 15px;
   text-align: center;
   vertical-align: middle;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth changes on hover */
 }
+
+
 
 #socialmedia i {
   font-size: 30px;
   color: #333; 
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+#socialmedia i:hover {
+  color: #0d47a1; /* Change icon color on hover */
+  transform: scale(1.2); /* Slightly enlarge icon */
 }
 
 #socialmedia th {
-  width: 25%; 
+  width: 25%;
+  font-weight: bold;
+  text-transform: uppercase; /* Capitalized headings */
+  color: #444; /* Darker text for headings */
+  transition: color 0.3s ease; /* Smooth heading hover effect */
 }
-#feedback {
+
+#socialmedia th:hover {
+  color: #ff5722; /* Change heading text color on hover */
+}
+
+ #feedback {
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -437,4 +467,4 @@ cursor: pointer;
   font-size: 50px;
   padding-left: 20px;
   color: aqua;
-} */ */ */
+}
